@@ -24,4 +24,20 @@ class Solution:
                 res = res + s[start+1:index]
             index += 1
         return res
-        
+
+#Third Solution
+class Solution:
+    def removeOuterParentheses(self, S: str) -> str:
+        res = ""
+        count = 0
+        first = 0
+        for i in range(len(S)):
+            if S[i] == "(":
+                count +=1
+            else:
+                count -= 1
+
+            if(count == 0):
+                res +=(S[first+1:i])
+                first = i+1
+        return res
