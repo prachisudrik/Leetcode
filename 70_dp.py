@@ -1,3 +1,6 @@
+from cmath import sqrt
+
+
 class Solution:
     def climbStairs(self, n: int) -> int:
         one,two = 1,1
@@ -6,5 +9,11 @@ class Solution:
             one = one + two
             two = temp
         return one
-  # tp
-        
+
+
+#second solution using fibonacci formula
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        sqrt5 = sqrt(5)
+        fibn = pow((1+sqrt5)/2,n+1)-pow((1-sqrt5)/2,n+1)
+        return int(fibn/sqrt5)
